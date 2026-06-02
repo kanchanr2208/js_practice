@@ -1,54 +1,22 @@
-console.log("hello world from external js file");
-let firstName = "John";
-let lastName = "Doe";
+/* Write the function sumInput() that:
 
-console.log(firstName);
-console.log(lastName);
+Asks the user for values using prompt and stores the values in the array.
+Finishes asking when the user enters a non-numeric value, an empty string, or presses “Cancel”.
+Calculates and returns the sum of array items. */
 
-let age = 11;
-console.log(age);
-age = 54;
-console.log(age);
+console.log("hello");
 
-const pi = 3.14159;
-console.log(pi);
+function takeInput() {
+    return prompt("Enter a number");
+}
+//let input1 = prompt("Enter the 1st Number");
 
-console.log((4+6+9)/77);
-
-let a = 10;
-console.log(a); 
-
-a = 5;
-console.log(a);
-
-let b = a * 7;
-console.log(b);
-
-const max = 57;
-const actual =  max - 13;
-const percentage = actual / max;
-console.log(percentage, actual, max);
-
-function createParagraph() {
-  const para = document.createElement("p");
-  para.textContent = "You clicked the button!";
-  document.body.appendChild(para);
+do {
+    let input = takeInput()
+    console.log(input1);
+}
+while (input1 == "" || input1 == null || isNaN(input1)) {
+    alert("you didnt enter a number")
 }
 
-let admin;
-let name;
-name = "John";
-admin = name;
-console.log(admin);
 
-const planet = "Earth";
-let visitor = "Alien";
-
-console.log (typeof pi);
-console.log (typeof admin);
-console.log (typeof planet);
-console.log (typeof a); 
-
-console.log(pi.toFixed(3));
-console.log (typeof ("10"+a));
-console.log(--a);
