@@ -1,22 +1,69 @@
-/* Write the function sumInput() that:
+let shoppingListArray = [];
 
-Asks the user for values using prompt and stores the values in the array.
-Finishes asking when the user enters a non-numeric value, an empty string, or presses “Cancel”.
-Calculates and returns the sum of array items. */
+const displaySection = document.querySelector("#display-section");
 
-console.log("hello");
+const form = document.querySelector("#form");
+const inputText = document.querySelector("#list-item")
 
-function takeInput() {
-    return prompt("Enter a number");
-}
-//let input1 = prompt("Enter the 1st Number");
+const list = document.createElement("ul");
+displaySection.appendChild(list);
 
-do {
-    let input = takeInput()
-    console.log(input1);
-}
-while (input1 == "" || input1 == null || isNaN(input1)) {
-    alert("you didnt enter a number")
-}
+form.addEventListener("submit", e => {
+    //Prevent Default Refresh of submit button
+    e.preventDefault();
+
+    /*
+        while input is not empty:
+        1. add the input text value to the array
+        2. create an <li> element, add the input text value to the <li>
+        3. create a delete button for each <li>
+        4. reset input text to ""
+
+        5. add event listener "click" to each delete button which 
+            a) deletes the listItem
+            b) splices the element from the array
+    */
+    if (inputText.value !== "") {
+        let currentText = inputText.value;
+        const uniqueID = Date.now();        //creating a unique id to connect it with the corresponding delete buttons
+
+
+        shoppingListArray.push({
+            id : uniqueID,
+            name: currentText
+        });
+
+        const listItem = document.createElement("li");
+        listItem.textContent = currentText;
+        list.appendChild(listItem);
+
+        const span = document.createElement("span")
+        span.textContent = " ";
+        listItem.appendChild(span);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.value = "Delete";
+        deleteButton.textContent = "Delete";
+        deleteButton.setAttribute("data-id", uniqueID);
+
+        span.appendChild(deleteButton);
+
+        deleteButton.addEventListener("click", e => {
+            list.removeChild(listItem);
+
+            const clickedID = deleteButton.getAttribute("data-id");
+
+            const exactIndex = shoppingListArray.findIndex(item => item.id === Number(clickedID));
+            
+            shoppingListArray.splice(exactIndex, 1);
+            console.log(shoppingListArray);
+        })
+
+        inputText.value = "";
+        console.log(shoppingListArray);
+    }   
+})
+
+
 
 
