@@ -1,17 +1,8 @@
+let numbers = [5, 2, 1, -10, 8];
 
-let menu = {
-  width: 200,
-  height: 300,
-  title: "My menu"
-};
-
-function multiplyNumeric(object) {
-    for (key in object) {
-        if (typeof object[key] == "number") {
-            object[key] = object[key]*2;
-        }
+for (let i = 0; i <= numbers.length; i++) {
+    if (numbers[i] > numbers[i+1]) {
+       numbers = numbers.push(numbers[i])
     }
-    return object; 
+    console.log(numbers);
 }
-
-console.log(multiplyNumeric(menu));
