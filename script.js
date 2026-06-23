@@ -35,3 +35,18 @@ function reverseString(str) {
 
 console.log(reverseString(string));
 */
+
+/*
+Exercise 08 - removeFromArray
+
+let array = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6] 
+function removeFromArray(arr, ...toBeRemoved) {
+    let filteredArray = arr;
+       for (let i = 0; i < toBeRemoved.length; i++) {
+        filteredArray = filteredArray.filter(item => item != toBeRemoved[i]);
+       }
+       console.log(filteredArray)
+}
+
+removeFromArray(array, 2);
+*/
