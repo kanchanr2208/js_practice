@@ -1,8 +1,17 @@
-let numbers = [5, 2, 1, -10, 8];
+let strings = [
+        "Hare", "Ram", "Hare", "Ram", "Ram", "Ram", "Hare", "Hare", "Hare", 
+        "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"
+    ];
 
-for (let i = 0; i <= numbers.length; i++) {
-    if (numbers[i] > numbers[i+1]) {
-       numbers = numbers.push(numbers[i])
+
+function findUnique(array) {
+    let uniqueArray = [];
+    for (item of array) {
+        if (!uniqueArray.includes(item)) {
+            uniqueArray.push(item);
+        }
     }
-    console.log(numbers);
+    console.log(uniqueArray);
 }
+
+findUnique(strings);
