@@ -91,8 +91,8 @@ function isLeapYear(a) {
 isLeapYear(1900);
 */
 
+/*
 // Exercise 11 - tempConversion 
-
 function convertToCelsius(a) {
     let conversion = ((a - 32) * (5/9));
     let final = Number(conversion.toFixed(1));
@@ -108,6 +108,5 @@ function convertToFahrenheit(a) {
 
 convertToCelsius(100);
 convertToFahrenheit(99);
-
-
+*/
 
