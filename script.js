@@ -37,7 +37,7 @@ console.log(reverseString(string));
 */
 
 /*
-Exercise 08 - removeFromArray
+//Exercise 08 - removeFromArray
 
 let array = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6] 
 function removeFromArray(arr, ...toBeRemoved) {
@@ -50,3 +50,64 @@ function removeFromArray(arr, ...toBeRemoved) {
 
 removeFromArray(array, 2);
 */
+
+/*
+//  Exercise 09 - sumAll
+function addEverything(a, b) {
+    let sum = 0;
+    let smaller = 0;
+    let bigger = 0
+    if (a > b) {
+        smaller = b;
+        bigger = a; 
+    } else {
+        smaller = a;
+        bigger = b;
+    }
+    for (let i = smaller; i <= bigger; i++ ) {
+        sum = sum + i;
+    }
+    console.log(sum);
+}
+
+addEverything(5, 1);
+*/
+
+/*
+//Exercise 10 - leapYears
+
+function isLeapYear(a) {
+    if ((a % 400 === 0) || ((a % 4 === 0) && (a % 100 !== 0))) {
+        console.log(a + " is a leap year");
+        return true;
+        
+    } else {
+        console.log(a + " is not a leap year");
+        return false;
+        
+    }
+}
+
+isLeapYear(1900);
+*/
+
+// Exercise 11 - tempConversion 
+
+function convertToCelsius(a) {
+    let conversion = ((a - 32) * (5/9));
+    let final = Number(conversion.toFixed(1));
+    console.log(final); 
+   
+}
+
+function convertToFahrenheit(a) {
+    let conversion = ((a * (9/5)) + 32);
+    let final = Number(conversion.toFixed(1));
+    console.log(final);
+}
+
+convertToCelsius(100);
+convertToFahrenheit(99);
+
+
+
