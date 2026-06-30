@@ -3,13 +3,11 @@ let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 29 };
 
 let arr = [ john, pete, mary ];
-let totalAge = 0;
 
 
-for (let i = 0; i< arr.length; i++) {
-    totalAge = totalAge + arr[i].age;
-}
+let totalAge = arr.reduce((accumulator, currentItem) => {
+    return accumulator + currentItem.age
+}, 0)
 
 let averageAge = totalAge/arr.length
-
-console.log(averageAge);
+console.log(averageAge)
